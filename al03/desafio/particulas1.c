@@ -17,7 +17,7 @@ int main(){
     printf("Quantas partículas quer gerar: ");
     scanf("%d", &qtdParticulas);
 
-    // popular o arquivo  com qtdParticulas x, y
+    // Arquivo com qtdParticulas x, y
     srand(time(NULL));
     for(; qtdParticulas > 0; qtdParticulas--){
         x = 100 - rand() % 200;

@@ -4,10 +4,7 @@
 
 int main(){
     FILE *procurador, *procuradorSaida;
-    char nomeArquivo[200]; 
-    int x, y; 
-    int qtdParticulas = 0;
-    int conta1q = 0, conta2q = 0, conta3q = 0 , conta4q = 0, contaOrigem = 0;
+    char nomeArquivo[200]; int x, y; int qtdParticulas = 0; int conta1q = 0, conta2q = 0, conta3q = 0 , conta4q = 0, contaOrigem = 0;
 
     // Abrir um arquivo de entrada
     printf("Nome de arquivo de entrada de partículas: ");
