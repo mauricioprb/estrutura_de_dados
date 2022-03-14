@@ -1,0 +1,6 @@
+Foram analisadas 896 partículas
+1° Quadrante: 33
+2° Quadrante: 29
+3° Quadrante: 16
+4° Quadrante: 22
+Origem: 0
