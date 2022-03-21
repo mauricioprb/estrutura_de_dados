@@ -8,8 +8,6 @@ quantos elementos há na pilha e seu topo (último valor).
 #include <stdlib.h>
 
 int main(){
-    printf
-    
 
     return 1;
 }

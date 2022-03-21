@@ -88,7 +88,7 @@ int main(){
     printf("O tamanho da pilha é: %d\n", contarNos(pilha1));
     exibir(pilha1);
 
-    printf("O número 10 está ou não na pilha? %d\n", localizado(10, pilha1));
+    printf("O número 25 está ou não na pilha? %d\n", localizado(25, pilha1));
 
     return 1;
 }
