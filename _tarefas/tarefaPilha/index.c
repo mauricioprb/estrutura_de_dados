@@ -30,7 +30,7 @@ int contarNos(Celula *topo){
 
 int main(){
 	Celula *pilha = NULL; 
-    Celula *pilhaImpar = NULL;
+    	Celula *pilhaImpar = NULL;
 	FILE *procurador;
 	char nomeArquivo[200];
     int valor;
@@ -53,8 +53,8 @@ int main(){
 	fclose(procurador);
 
 	printf("\nEndereço do último elemento: %p\n", pilha);
-    printf("Valor do último elemento: %d\n", pilha->dado);
-    printf("O tamanho da pilha um é: %d\n", contarNos(pilha));
+    	printf("Valor do último elemento: %d\n", pilha->dado);
+    	printf("O tamanho da pilha um é: %d\n", contarNos(pilha));
 
 	return 1;
 }
