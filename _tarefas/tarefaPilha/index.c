@@ -33,7 +33,7 @@ int main(){
     	Celula *pilhaImpar = NULL;
 	FILE *procurador;
 	char nomeArquivo[200];
-    int valor;
+    	int valor;
 
 	printf("Nome do arquivo: ");
 	scanf("%s", nomeArquivo);
