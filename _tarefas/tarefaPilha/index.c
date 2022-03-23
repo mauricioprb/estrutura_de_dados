@@ -30,10 +30,10 @@ int contarNos(Celula *topo){
 
 int main(){
 	Celula *pilha = NULL; 
-    	Celula *pilhaImpar = NULL;
+    Celula *pilhaImpar = NULL;
 	FILE *procurador;
 	char nomeArquivo[200];
-    	int valor;
+    int valor;
 
 	printf("Nome do arquivo: ");
 	scanf("%s", nomeArquivo);
@@ -45,16 +45,16 @@ int main(){
 		exit(0);
 	}
 
-	do{
+	while(feof(procurador) == 0){ // 0 = false
 		fscanf(procurador, "%d", &valor);
 		pilha = inserir(valor, pilha);
-	} while(!feof(procurador));
+	} 
 
 	fclose(procurador);
 
 	printf("\nEndereço do último elemento: %p\n", pilha);
-    	printf("Valor do último elemento: %d\n", pilha->dado);
-    	printf("O tamanho da pilha um é: %d\n", contarNos(pilha));
+    printf("Valor do último elemento: %d\n", pilha->dado);
+    printf("O tamanho da pilha um é: %d\n", contarNos(pilha));
 
 	return 1;
 }
