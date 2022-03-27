@@ -3,7 +3,7 @@
 
 typedef struct no{
     int dado;
-    struct no *prox; // Ponteiro para o próximo elemneto
+    struct no *prox; // Ponteiro para o próximo elemento
 } Celula;
 
 Celula *inserir(int valor, Celula *topo){
