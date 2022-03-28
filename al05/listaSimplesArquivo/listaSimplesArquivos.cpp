@@ -1,5 +1,9 @@
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
+#include <string>
+#include <sstream>
+
 using namespace std;
 
 // Estrutura de dados
@@ -56,13 +60,44 @@ void exibir(Celula *lista){
     }
 }
 
+Celula *popularDoArquivo(Celula *lista){
+    // ifstream -> input ou ler
+    // ofstream -> output ou escrever
+
+    ifstream procurador;
+    char nomeArquivo[200];
+
+    cout << "Informe caminho e nome do arquivo fonte com números: ";
+    cin >> nomeArquivo;
+
+    procurador.open(nomeArquivo);
+
+    if(!procurador){
+        cout << "Arquivo não localizado!\n";
+        return NULL;
+    }
+
+    string linha;
+    int valor;
+
+    while(getline(procurador, linha)){
+        stringstream pegaInteiro(linha);
+        pegaInteiro >> valor;
+        lista = inserir(valor, lista); // Inserção ordenada
+
+    }
+
+    procurador.close();
+    return lista;
+
+}
+
 int main(){
     Celula *lista = NULL;
 
-    lista = inserir(2, lista);
-    lista = inserir(1, lista);
-    lista = inserir(10, lista);
-    lista = inserir(4, lista);
+    lista = popularDoArquivo(lista);
 
     exibir(lista);
+
+    return 1;
 }
