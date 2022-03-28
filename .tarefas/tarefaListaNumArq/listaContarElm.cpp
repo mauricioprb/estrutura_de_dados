@@ -99,7 +99,6 @@ Celula *popularDoArquivo(Celula *lista){
 
     procurador.close();
     return lista;
-
 }
 
 int main(){
