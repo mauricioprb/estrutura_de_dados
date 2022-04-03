@@ -49,6 +49,7 @@ Celula *inserir(int valor, Celula *lista){
     return lista;
 }
 
+// Função para contar os elementos da lista
 int contarElementos(Celula *lista){
     int qtd = 0;
     Celula *p;
