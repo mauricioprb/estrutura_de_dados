@@ -14,4 +14,8 @@ int main(){
 
     cout << "\nValores ordenados da glicemia:\n";
     exibirLista(lista);
+
+    cout << "\nQuantidade elementos da lista: " << contarElementosLista(lista) << endl;
+
+    cout << "\nMédia aritimética: " << mediaElmLista(lista) << endl;
 }

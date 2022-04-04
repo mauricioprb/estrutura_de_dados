@@ -31,7 +31,7 @@ Celula *inserirLista(int valor, Celula *lista){
     novo = (Celula *)malloc(sizeof(Celula));
     // depositar valores
     novo->valorGlicemia = valor;
-    novo->prox = NULL; // não sei onde ele vai ser inserido ! inicia-se nulo;
+    novo->prox = NULL;
     // localizar a posicao de inserção
     // testar primeira vez:
     if (!lista)
@@ -110,4 +110,22 @@ void popularDoArquivo(Celula **topo, Celula **lista){
     }
 
     procurador.close();
+}
+
+int contarElementosLista(Celula *lista){
+    int qtd = 0;
+    Celula *p;
+    for(p = lista; p; p = p->prox){
+        qtd++;
+    }
+    return qtd;
+}
+
+int mediaElmLista(Celula *lista){
+    int soma = 0;
+    Celula *p;
+     for(p = lista; p; p->prox){
+         soma+= p->valorGlicemia;
+     }
+     return soma / contarElementosLista(lista);
 }
