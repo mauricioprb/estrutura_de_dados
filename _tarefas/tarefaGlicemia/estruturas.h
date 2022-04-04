@@ -15,48 +15,49 @@ typedef struct no{
 }Celula;
 
 Celula *inserirPilha(int valor, Celula *topo){
-    // alocar memomira
+    // Alocar memórira
     Celula *novo = (Celula *)malloc(sizeof(Celula));
-    //depositar valor
+    // Depositar valor
     novo->valorGlicemia = valor;
-    //engatar o novo no ultimo
+    // Engatar o novo no ultimo
     novo->prox = topo;
-    //retornar o novo top
+    // Retornar o novo top
     return novo;
 }
+
 Celula *inserirLista(int valor, Celula *lista){
     Celula *novo, *p, *pR;
 
-    // alocar memomoria
+    // Alocar memória
     novo = (Celula *)malloc(sizeof(Celula));
-    // depositar valores
+    // Depositar valores
     novo->valorGlicemia = valor;
     novo->prox = NULL;
-    // localizar a posicao de inserção
-    // testar primeira vez:
-    if (!lista)
-        return novo;
+    // Localizar a posição de inserção
+    // Testar primeira vez:
+    if (!lista) return novo;
 
     for (pR = NULL, p = lista; p; pR = p, p = p->prox){
-        if (valor < p->valorGlicemia){ // encontrei a posicao
+        if (valor < p->valorGlicemia){ // Encontrei a posição
             break;
         }
     }
-    // engatar
-    // testar se no inicio
+    // Engatar
+    // Testar se no inicio
     if (p == lista){
         novo->prox = lista;
         return novo;
     }
-    else if (!p){ // testar se no fim
+    else if (!p){ // Testar se no fim
         pR->prox = novo;
     }
-    else{ // no meio
+    else{ // No meio
         pR->prox = novo;
         novo->prox = p;
     }
     return lista;
 }
+
 void exibirPilha(Celula *topo) {
     if (!topo){
         cout << "Pilha vazia!\n";
@@ -78,13 +79,14 @@ void exibirLista(Celula *lista){
         cout << p->valorGlicemia << endl;
     }
 }
+
 void popularDoArquivo(Celula **topo, Celula **lista){
-    // ifstream -> inputar
+    // ifstream -> input
     // ofstream -> output
     ifstream procurador;
-    char nomeArquivo[200];
+    string nomeArquivo;
 
-    cout << "Informe o caminho do arquivo com números: ";
+    cout << "Informe o nome do arquivo com os dados da glicemia: ";
     cin >> nomeArquivo;
 
     procurador.open(nomeArquivo);
@@ -103,7 +105,7 @@ void popularDoArquivo(Celula **topo, Celula **lista){
     while (getline(procurador, linha)){
         posicaoEspaco = linha.find(" ");
 
-        //extrair glicemia
+        // Extrair glicemia
         valorGlicemia = linha.substr(0,posicaoEspaco);
         *topo = inserirPilha(stoi(valorGlicemia), *topo);
         *lista = inserirLista(stoi(valorGlicemia), *lista);
@@ -121,11 +123,13 @@ int contarElementosLista(Celula *lista){
     return qtd;
 }
 
-int calcularMedia(Celula *lista){
+float calcularMedia(Celula *lista){
     int soma = 0;
     Celula *p;
-     for(p = lista; p; p->prox){
-         soma+= p->valorGlicemia;
-     }
-     return soma / contarElementosLista(lista);
+    for(p = lista; p; p->prox){
+        soma += p->valorGlicemia;
+    }
+
+    float media = soma / contarElementosLista(lista);
+    return media ;
 }
