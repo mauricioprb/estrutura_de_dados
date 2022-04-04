@@ -121,7 +121,7 @@ int contarElementosLista(Celula *lista){
     return qtd;
 }
 
-int mediaElmLista(Celula *lista){
+int calcularMedia(Celula *lista){
     int soma = 0;
     Celula *p;
      for(p = lista; p; p->prox){

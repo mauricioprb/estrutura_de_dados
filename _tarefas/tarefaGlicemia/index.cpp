@@ -17,5 +17,5 @@ int main(){
 
     cout << "\nQuantidade elementos da lista: " << contarElementosLista(lista) << endl;
 
-    cout << "\nMédia aritimética: " << mediaElmLista(lista) << endl;
+    cout << "\nMédia aritimética: " << calcularMedia(lista) << endl;
 }
