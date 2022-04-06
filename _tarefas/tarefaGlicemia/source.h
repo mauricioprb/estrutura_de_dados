@@ -158,8 +158,3 @@ float medianaGlicemia(Celula *lista){
     
     return (p->valorGlicemia + p->prox->valorGlicemia) / 2;
 }
-
-// Menor valor glicêmico
-int menorValorGlicemico(Celula *topo){
-    return 
-}
