@@ -1,5 +1,5 @@
 #include <iostream>
-#include "estruturas.h"
+#include "source.h"
 
 using namespace std;
 
@@ -9,13 +9,15 @@ int main(){
 
     popularDoArquivo(&pilha, &lista);
 
-    cout << "\nValores originais de glicemia:\n";
+    cout << "Valores originais de glicemia do mais recente ao mais antigo" << endl;
     exibirPilha(pilha);
 
-    cout << "\nValores ordenados da glicemia:\n";
+    cout << "Valores ordenados de glicemia do mais baixo ao mais alto" << endl;
     exibirLista(lista);
 
-    cout << "\nQuantidade elementos da lista: " << contarElementosLista(lista) << endl;
+    cout << "\nForam carregados: " << contarElementosLista(lista) << " dados glicêmicos." << endl;
 
-    cout << "Média aritimética: " << calcularMedia(lista) << endl;
+    cout << "\nMédia glicêmica é: " << mediaGlicemia(lista) << endl;
+
+    cout << "\nMediana glicêmica é: " << medianaGlicemia(lista) << endl;
 }
