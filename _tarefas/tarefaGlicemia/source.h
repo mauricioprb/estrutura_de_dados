@@ -18,7 +18,7 @@ typedef struct no{
 // Mostra os valores glicemicos do mais recente (topo) ao mais antigo
 void exibirPilha(Celula *topo){
     Celula *p;
-    for (p = topo; p; p = p->prox){
+    for(p = topo; p; p = p->prox){
         cout << p->valorGlicemia << endl;
     }
 }
@@ -40,7 +40,7 @@ Celula *inserirPilha(int valor, Celula *topo){
 // Mostra os valores ordenados, do menor ao maior
 void exibirLista(Celula *lista){
     Celula *p;
-    for (p = lista; p; p = p->prox){
+    for(p = lista; p; p = p->prox){
     cout << p->valorGlicemia << endl;
     }
 }
@@ -59,17 +59,17 @@ Celula *inserirLista(int valor, Celula *lista){
     if (!lista) return novo;
 
     Celula *p, *pR;
-    for (pR = NULL, p = lista; p; pR = p, p = p->prox){
+    for(pR = NULL, p = lista; p; pR = p, p = p->prox){
         if (valor < p->valorGlicemia) break;
     }
 
     // É o primeiro
-    if (p == lista){
+    if(p == lista){
         novo->prox = lista;
         return novo;
     }
     // É o último
-    if (!p){
+    if(!p){
         pR->prox = novo;
     } else{ 
         pR->prox = novo;
@@ -90,7 +90,7 @@ void popularDoArquivo(Celula **topo, Celula **lista){
 
     procurador.open(nomeArquivo);
 
-    if (!procurador){
+    if(!procurador){
         cout << "Arquivo não localizado!\n";
         return;
     }
@@ -101,7 +101,7 @@ void popularDoArquivo(Celula **topo, Celula **lista){
     string valorGlicemia;
 
     int posicaoEspaco = 0;
-    while (getline(procurador, linha)){
+    while(getline(procurador, linha)){
         posicaoEspaco = linha.find(" ");
 
         // Extrair glicemia
@@ -117,7 +117,7 @@ void popularDoArquivo(Celula **topo, Celula **lista){
 int contarElementosLista(Celula *lista){
     int contador = 0;
     Celula *p;
-    for (p = lista; p; p = p->prox){
+    for(p = lista; p; p = p->prox){
         contador++;
     }
     return contador;
@@ -127,7 +127,7 @@ int contarElementosLista(Celula *lista){
 float mediaGlicemia(Celula *lista){
    int soma = 0;
    Celula *p;
-   for (p = lista; p ; p = p->prox){
+   for(p = lista; p ; p = p->prox){
        soma += p->valorGlicemia;
    }
    return soma / contarElementosLista(lista);
@@ -138,7 +138,7 @@ float medianaGlicemia(Celula *lista){
     int quantidadeElementos = contarElementosLista(lista);
     bool par;
 
-    if (quantidadeElementos % 2 == 0){
+    if(quantidadeElementos % 2 == 0){
         par = true;
     }else{
         par = false;
@@ -147,7 +147,7 @@ float medianaGlicemia(Celula *lista){
     int i;
     int metade;
     Celula *p;
-    if (!par){
+    if(!par){
         metade = (int)quantidadeElementos/2;
     }else{
         metade = (int)quantidadeElementos/2 - 1;
