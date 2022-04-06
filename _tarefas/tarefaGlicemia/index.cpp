@@ -20,4 +20,8 @@ int main(){
     cout << "\nMédia glicêmica é: " << mediaGlicemia(lista) << endl;
 
     cout << "\nMediana glicêmica é: " << medianaGlicemia(lista) << endl;
+
+    cout << "\nO menor valor glicêmico é: " << lista->valorGlicemia << endl; // Como a lista ordena do menor para o maior só ṕegar o último valor
+
+    cout << "\nMaior valor glicêmico é: " << maiorValorGlicemico(lista) << endl;
 }

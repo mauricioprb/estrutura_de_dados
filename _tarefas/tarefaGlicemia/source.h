@@ -158,3 +158,14 @@ float medianaGlicemia(Celula *lista){
     
     return (p->valorGlicemia + p->prox->valorGlicemia) / 2;
 }
+
+int maiorValorGlicemico(Celula *lista){
+    int maiorValor = lista->valorGlicemia;
+    while(lista != NULL){
+        if(lista->valorGlicemia > maiorValor){
+            maiorValor = lista->valorGlicemia;
+        }
+        lista = lista->prox;
+    }
+    return maiorValor;
+}

@@ -72,7 +72,7 @@ int localizado(int valor, Celula *topo){
 }
 
 int main(){
-    Celula *pilha1 = NULL; // pilha1 é um ponteiro de Celula que vai apontar para o último elemneto inserido
+    Celula *pilha1 = NULL; // pilha1 é um ponteiro de Celula que vai apontar para o último elemento inserido
 
     pilha1 = inserir(15, pilha1);
     pilha1 = inserir(10, pilha1);
