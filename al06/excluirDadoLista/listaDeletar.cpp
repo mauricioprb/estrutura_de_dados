@@ -19,7 +19,7 @@ int main(){
     cout << "\nLista após a exclusão:" << endl;
     exibirLista(lista);
 
-    lista = excluirPu(lista);
+    lista = excluirPrimeiroUltimo(lista);
 
     cout << "\nLista após a poda:" << endl;
     exibirLista(lista);

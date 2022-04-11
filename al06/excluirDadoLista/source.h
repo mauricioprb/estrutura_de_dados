@@ -182,7 +182,7 @@ Celula *excluirOcorrencia(int valor, Celula *lista){
     return lista;
 }
 
-Celula *excluirPu(Celula *lista){
+Celula *excluirPrimeiroUltimo(Celula *lista){
     Celula *primeiro = lista;
 
     int qtd = contarElementosLista(lista);
@@ -191,18 +191,13 @@ Celula *excluirPu(Celula *lista){
         lista = lista->prox;
         free(primeiro);
 
-
         Celula *p, *pR;
 
-        for(pR= NULL, p = lista; p->prox; pR = p, p = p->prox);
+        for(pR = NULL, p = lista; p->prox; pR = p, p = p->prox);
 
         pR->prox = NULL;
 
         free(p);
     }
-
-
     return lista;
-
-
 }
