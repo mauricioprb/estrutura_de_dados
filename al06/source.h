@@ -181,3 +181,28 @@ Celula *excluirOcorrencia(int valor, Celula *lista){
     }
     return lista;
 }
+
+Celula *excluirPu(Celula *lista){
+    Celula *primeiro = lista;
+
+    int qtd = contarElementosLista(lista);
+
+    if(qtd > 3){
+        lista = lista->prox;
+        free(primeiro);
+
+
+        Celula *p, *pR;
+
+        for(pR= NULL, p = lista; p->prox; pR = p, p = p->prox);
+
+        pR->prox = NULL;
+
+        free(p);
+    }
+
+
+    return lista;
+
+
+}

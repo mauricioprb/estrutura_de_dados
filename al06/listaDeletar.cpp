@@ -19,5 +19,10 @@ int main(){
     cout << "\nLista após a exclusão:" << endl;
     exibirLista(lista);
 
+    lista = excluirPu(lista);
+
+    cout << "\nLista após a poda:" << endl;
+    exibirLista(lista);
+
     return 1;
 }
