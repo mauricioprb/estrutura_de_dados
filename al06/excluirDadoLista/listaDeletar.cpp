@@ -8,7 +8,7 @@ int main(){
     int qtdNumerosLista = 10; 
 
     lista = popular(lista, qtdNumerosLista);
-    cout << "Lista inicial:" << endl;
+    cout << "Lista inicial:" << endl;\
     exibirLista(lista);
 
     int numero;
