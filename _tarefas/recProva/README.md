@@ -1,4 +1,4 @@
-# Rec. Avalição 1
+# Rec. Avaliação 1
 
 1) Faça um método que receba uma lista de números inteiros e retire todos os valores pares da lista. Ao final, a lista alterada deve ser retornada.
 
