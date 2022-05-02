@@ -18,46 +18,16 @@ void exibirLista(Celula *lista){
   }
 }
 
-Celula *inserirListaControleDuplicados(int valor, Celula *lista){
-  // Alocar memoria
+Celula *inserirLista(int valor, Celula *lista){
+  // Alocar memória
+
   Celula *novo = (Celula*)malloc(sizeof(Celula));
+
+  if(valor % 2 == 0){
+    return lista;
+  }
 
   // Depositar valores
-  novo->dado = valor;
-  novo->prox = NULL;
-
-  // Percorrer para encontrar o local adequado na lista
-  // Testar se é a primeira vez
-  if(!lista) return novo;
-
-  Celula *p, *pR;
-  for(pR = NULL, p = lista; p; pR = p, p = p->prox){
-    if(valor < p->dado) break;
-
-    if(valor == p->dado) return lista; // Valor já cadastrado, logo retorna a lista sem alteração
-  }
-
-  // É o primeiro
-  if(p == lista){
-    novo->prox = lista;
-    return novo;
-  }
-  // É o último
-  if (!p){
-    pR->prox = novo;
-  } else{ // Está no meio de duas celulas
-    pR->prox = novo;
-    novo->prox = p;
-  }
-  // Retorna o inicio da lista
-  return lista;  
-}
-
-Celula *inserirListaSemControleDuplicados(int valor, Celula *lista){
-  // Alocar memória
-  Celula *novo = (Celula*)malloc(sizeof(Celula));
-
-  //depositar valores
   novo->dado = valor;
   novo->prox = NULL;
 
@@ -113,7 +83,7 @@ Celula *excluirLista(int valor, Celula *lista) {
   return lista;
 }
 
-Celula *excluirOcorrenciasLista(int valor, Celula *lista) {
+Celula *excluirOcorrenciasLista(int valor, Celula *lista){
   Celula *p, *pR;
   int contaExcluidos = 0;
 
@@ -143,7 +113,7 @@ Celula *excluirOcorrenciasLista(int valor, Celula *lista) {
     }   
   } while(houveExclusao);
 
-  cout << "O total de excluidos foi: " << contaExcluidos << endl;
+  cout << "O total de excluídos foi: " << contaExcluidos << endl;
   return lista;
 }
 
@@ -157,34 +127,67 @@ int contarElementos(Celula *lista){
   return contador;
 }
 
-void verificarPresenca(Celula *lista1, Celula* lista2){
-  if(!lista1 || !lista2){
-    cout << "Operação não realizada, pois ambas não existem ou uma delas também não existe!" << endl;
-    return ;
+Celula *popular(Celula *lista, int n){
+  srand(time(NULL));
+  
+  for(int i = 0; i < n; i++){
+    lista = inserirLista(rand() % 100, lista);
   }
-
-  Celula *p1, *p2;
-
-  for(p1 = lista1; p1; p1 = p1->prox){
-    for(p2 = lista2; p2; p2 = p2->prox){
-      if(p1->dado == p2->dado){
-        cout << "Este dado ocorre nas 2 listas: " << p1->dado << endl;
-      }
-    }
-  }  
+  return lista;
 }
 
-Celula *unirListas(Celula *lista1, Celula *lista2){
-  if(!lista1 || !lista2){
-    cout << "Operação não realizada, pois ambas não existem ou uma delas também não existe!" << endl;
-    return NULL;
+Celula *excluirPares(Celula *lista){
+  Celula *p;
+
+  for(p = lista; p;){
+      if(p->dado % 2 == 0){
+          if(p == lista){
+              lista = lista->prox;
+              break;
+          }
+          lista = excluirLista(p->dado, lista);
+          p = lista;
+      }
+      else{
+        p = p->prox;
+      }
+  }
+  return lista;
+}
+
+float mediaPrimeiroUltimoValor(Celula *lista){
+  Celula *p;
+
+  int primeiroValor = lista->dado;
+  int ultimoValor = 0;
+
+  if(!lista || !lista->prox) {
+    cout << "A lista tem menos de dois valores!" << endl;
   }
 
+  for(p = lista; p->prox; p = p->prox);
+
+  ultimoValor = p->dado;
+
+  float media = ((primeiroValor + ultimoValor) / 2);
+
+  return media;
+}
+
+void exibirMetadeLista(Celula *lista) {
+  if (!lista) return;
+
+  int i = 0;
   Celula *p;
-  
-  for(p = lista1; p->prox; p = p->prox);
+  int qtdElm = contarElementos(lista);
 
-  p->prox = lista2;
+  if(qtdElm == 1 || qtdElm == 2){
+      cout << lista->dado << endl;
+  }
 
-  return lista1;
+  qtdElm = (int)qtdElm / 2;
+
+  for(p = lista; i < qtdElm; i++, p = p->prox){
+      cout << p->dado << endl;
+  }
 }
