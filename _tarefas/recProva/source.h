@@ -136,6 +136,8 @@ Celula *popular(Celula *lista, int n){
   return lista;
 }
 
+// Exerícios recuperação
+
 Celula *excluirPares(Celula *lista){
   Celula *p;
 
