@@ -1,17 +1,17 @@
 #include <stdio.h>
 #define TAM 5
 
-typedef struct{
+typedef struct {
     float altura, peso, imc;
-}imc;
+} imc;
 
-int main(){
+int main() {
     int i;
     int posicaoMaior = 0;
     
     imc dados[4];
     
-    for(i = 0; i<4; i++){
+    for(i = 0; i<4; i++) {
         printf("Peso: ");
         scanf("%f", &dados[i].peso);
         printf("Altura: ");
@@ -25,7 +25,8 @@ int main(){
             posicaoMaior = i;
         }
     }
+    
     printf("Maior IMC: %.2f\n", dados[posicaoMaior].imc);
     
-    return 0;
+    return 1;
 }

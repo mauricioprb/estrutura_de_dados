@@ -1,11 +1,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
-
 #include "arvore.h"
 
 using namespace std;
-
 
 int main() {
     ArvoreString *raiz = NULL;
@@ -16,7 +14,6 @@ int main() {
     raiz = inserirString("Arthur", raiz);
     raiz = inserirString("Itamar", raiz);
     
-
     exibirString(raiz,0);
 
     // cout << "A altura desta arvore eh: " << calcularAltura(raiz) << endl;
