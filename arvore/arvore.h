@@ -194,7 +194,6 @@ void exibir(Arvore *raiz, int nivel) {
     }
 }
 
-
 void exibirString(ArvoreString *raiz, int nivel) {
     if(raiz) {
         exibirString(raiz->dir, nivel + 1); // Empilhando tudo para direita, busca-se exibirString os maiores primeiro
@@ -263,7 +262,6 @@ ArvoreString *menorElementoString(ArvoreString *raiz) {
 
     return p;
 }
-
 
 Arvore *maiorElemento(Arvore *raiz) {
     if(!raiz) return NULL;
