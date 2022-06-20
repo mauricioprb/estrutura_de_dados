@@ -3,12 +3,12 @@
 using namespace std;
 
 // Estrutura de dados
-typedef struct no{
+typedef struct no {
     int dado;
     struct no *prox;
 } Celula;
 
-Celula *inserir(int valor, Celula *lista){
+Celula *inserir(int valor, Celula *lista) {
     Celula *novo, *p, *pR;
     // Alocar memória
     novo = (Celula *)malloc(sizeof(Celula));
@@ -21,8 +21,8 @@ Celula *inserir(int valor, Celula *lista){
     // Testar para primeira vez
     if(!lista) return novo;
 
-    for(pR = NULL, p = lista; p; pR = p, p = p->prox){
-        if(valor < p->dado){ // Encontrei a posição        
+    for(pR = NULL, p = lista; p; pR = p, p = p->prox) {
+        if(valor < p->dado) { // Encontrei a posição        
             break;
         }
     }
@@ -30,13 +30,13 @@ Celula *inserir(int valor, Celula *lista){
 
     // Engatar
     // Testar se no início
-    if(p == lista){
+    if(p == lista) {
         novo->prox = lista; // novo->prox = p;
         return novo;
-    } else if(!p){ // Testar se no fim
+    } else if(!p) { // Testar se no fim
         pR->prox = novo;
         return lista;
-    } else{ // No meio
+    } else { // No meio
         pR->prox = novo;
         novo->prox = p;
     }
@@ -46,17 +46,17 @@ Celula *inserir(int valor, Celula *lista){
 }
 
 void exibir(Celula *lista){
-    if(!lista){
+    if(!lista) {
         cout << "Lista vazia\n";
         return;
     }
     Celula *p;
-    for(p = lista; p; p = p->prox){
+    for(p = lista; p; p = p->prox) {
         cout << p->dado << endl;
     }
 }
 
-int main(){
+int main() {
     Celula *lista = NULL;
 
     lista = inserir(2, lista);

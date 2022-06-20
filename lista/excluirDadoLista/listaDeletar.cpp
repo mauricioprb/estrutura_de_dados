@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main(){
+int main() {
     Celula *lista = NULL;
     int qtdNumerosLista = 10; 
 

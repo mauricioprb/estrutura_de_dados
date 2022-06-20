@@ -10,7 +10,7 @@ int main() {
     printf("digite o nome do arquivo para abrir:");
     scanf("%s",nomeArquivo);
 
-    procuradorArquivo=fopen(nomeArquivo,"r");
+    procuradorArquivo=fopen(nomeArquivo, "r");
 
     if(procuradorArquivo == NULL) {
         printf("arquivo nao localizado");

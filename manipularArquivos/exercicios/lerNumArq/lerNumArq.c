@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
+int main() {
     FILE *procurador;
     char nomeArquivo[200], linha[200];
 
@@ -10,14 +10,15 @@ int main(){
 
     procurador = fopen(nomeArquivo, "r");
 
-    if(!procurador){
+    if(!procurador) {
         printf("Arquivo não encontrado\n");
         exit(0);
     }
-    do{
+
+    do {
         fscanf(procurador, "%s", linha);
         printf("%s\n", linha);
-    }while(!feof(procurador));
+    } while(!feof(procurador));
 
     fclose(procurador);
 

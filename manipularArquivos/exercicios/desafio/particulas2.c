@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main(){
+int main() {
     FILE *procurador, *procuradorSaida;
     char nomeArquivo[200]; int x, y; int qtdParticulas = 0; int conta1q = 0, conta2q = 0, conta3q = 0 , conta4q = 0, contaOrigem = 0;
 
@@ -11,11 +11,12 @@ int main(){
     scanf("%s", nomeArquivo); //gets(nomeArquivo);
     procurador = fopen(nomeArquivo, "r");
 
-    if(!procurador){
+    if(!procurador) {
         printf("Arquivo com partículas não localizado\n");
     }
+
     // Percorrer o arquivo/procurador extraindo de cada linha x e y
-    do{
+    do {
         fscanf(procurador, "%d, %d", &x, &y);
 
         if(x > 0 && y > 0){
@@ -26,7 +27,7 @@ int main(){
             conta3q++;
         } else if(x > 0 && y < 0){
             conta4q++;
-        } else{
+        } else {
             contaOrigem++;
         }
 
